@@ -1,0 +1,28 @@
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/onnxjs/dist/onnx.min.js"></script>
+  <script src="../common/ndarray-browser-min.js"></script>
+  <script src="../common/imagenet.js"></script>
+  <script src="../common/image-loader.js"></script>
+  <script src="./index-yolo.js"></script>
+  <script>
+    const imageSize = 224;
+  </script>
+</head>
+<body>
+  <canvas id='temp-canvas'></canvas>
+  <select id="backend">
+  <option value="webgl">GPU - WebGL</option>
+  <option value="wasm">Web Assembly</option>
+  <option value="cpu">CPU</option>
+</select>
+  <h1>ML on the Browser Demo</h1>
+  <img id="imageSource" src="./car.png"/>
+  <div>
+    <input type="button" value="Predict" onclick="predict()">
+  </div>
+  <div id="predictions">
+
+  </div>
+</body>
+</html>
